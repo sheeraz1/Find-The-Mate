@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import $ from 'jquery';
+
+require('./js/chessboard-0.3.0')
+
+
 
 class App extends Component {
+  constructor(proos){
+    super(props);
+    state={
+      puzzle: '',
+      solution:'',
+    }
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div classNam="App" id="board2" style="width: 400px">
       </div>
     );
   }
 }
+
+
+var board2 = ChessBoard('board2', {
+  draggable: true,
+  dropOffBoard: 'trash',
+  sparePieces: true
+});
 
 export default App;
